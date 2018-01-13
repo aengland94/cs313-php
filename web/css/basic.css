@@ -1,0 +1,81 @@
+/* Basic Style */
+
+*{
+    background-color: #A2FFF5;
+    font-family: Futura, sans-serif;
+}
+body {
+    margin: auto;
+    width: 90%;
+    background-color: #f2f2f2;
+}
+p {
+    background-color: #f2f2f2;
+    padding: 2%;
+}
+p * {
+    background-color: inherit;
+}
+#header {
+    margin: inherit;
+    width: 100%;
+}
+#header h1 {
+    background-color: #ccc;
+    padding: 2%;
+    margin: 0%;
+}
+nav {
+    margin: 0%;
+    padding: 0%;
+    background-color: #333;
+    overflow: hidden;
+}
+nav a {
+    width: max-content;
+    background-color: inherit;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1% 3%;
+    float: left;
+    display: block;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #ccc;
+    color: #333;
+}
+nav a.active {
+    background-color: #888;
+    color: #A2FFF5;
+}
+div.left {
+    width: 25%;
+    height: 326px;
+    float: left;
+    background-color: #888;
+    padding: 1% 2%;
+}
+div.left h2 {
+    background-color: inherit;
+    color: #A2FFF5;
+    padding: 2%;
+}
+ul, li {
+    background-color: inherit;
+    color: #f2f2f2;
+    padding: 1% 3%;
+    list-style-type: none;
+}
+li a {
+    background-color: inherit;
+    color: inherit;
+}
+div.main {
+    float: left;
+    background-color: inherit;
+}
+h2 {
+    background-color: inherit;
+    padding-left: 2%;
+}

@@ -1,0 +1,13 @@
+/* Team 02 Style */
+
+div h2, #div1, #div2, #div3, #buttons { background-color: inherit; 
+	                                    font-weight: lighter;
+	                                     }
+div h2:hover { font-weight: bold; 
+	           font-size-adjust: 2;
+	            }
+div button, div input { margin-bottom: 2%;
+	                    margin-left: 1%;
+                        background-color: #FFF;
+                         }
+#div1 {  }

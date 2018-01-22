@@ -1,6 +1,6 @@
 /* Team 02 Style */
 
-div h2, #div1, #div2, #div3, #buttons { background-color: inherit; 
+div h2, #div1, #div2, #div3, #buttons { background-color: #f2f2f2; 
 	                                    font-weight: lighter;
 	                                     }
 div h2:hover { font-weight: bold; 

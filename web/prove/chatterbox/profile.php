@@ -24,9 +24,9 @@
       echo 'Error!: ' . $ex->getMessage();
       die();
    }
-   $stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
-   $stmt->execute(array(':username' => $_SESSION['username']););
-   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
+   //$stmt->execute(array(':username' => $_SESSION['username']););
+   //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <!-- Profile page for Chatterbox -->
@@ -50,11 +50,12 @@
    </head>
    <body>
       <div class="body">
-          <div class="container"> 
-             <div class="row">
-                <?php echo '<p class="col-md-4">' . $rows . '</p>' ?>
-              </div>
-          </div>
+         <h1>test</h1>
+         <div class="container"> 
+            <div class="row">
+               <!--<?php echo '<p class="col-md-4">' . $rows . '</p>' ?> -->
+            </div>
+         </div>
       </div>
    </body>
 </html>

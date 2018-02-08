@@ -1,29 +1,11 @@
 <?php 
-   session_start();
+   require "db.php";
    //session_unset();
    if(!isset($_SESSION['username'])){
       $_SESSION['username'] = 'aengland94';
 
    //connect to database
-   try
-   {
-      $dbUrl = getenv('DATABASE_URL');
-
-      $dbopts = parse_url($dbUrl);
-
-      $dbHost = $dbopts["host"];
-      $dbPort = $dbopts["port"];
-      $dbUser = $dbopts["user"];
-      $dbPassword = $dbopts["pass"];
-      $dbName = ltrim($dbopts["path"],'/');
-
-      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-   }
-   catch (PDOException $ex)
-   {
-      echo 'Error!: ' . $ex->getMessage();
-      die();
-   }
+   connectToDB();
    //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -53,7 +35,16 @@
          <h1>test</h1>
          <div class="container"> 
             <div class="row">
-               <!--<?php echo '<p class="col-md-4">' . $rows . '</p>' ?> -->
+               <?php 
+                  $statement = $db->prepare("SELECT username FROM public.users");
+                  $statement->execute();
+
+                  while($row = $statement->fetch(PDO::FETCH_ASSOC))
+                  {
+                     echo '<p class="col-md-4">' . $row['username'] . '</p>';
+                  }
+               
+               ?> 
             </div>
          </div>
       </div>

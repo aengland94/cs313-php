@@ -1,5 +1,5 @@
 <?php 
-   require "db.php";
+   //require "db.php";
    //session_unset();
    // if(!isset($_SESSION['username'])){
    //    $_SESSION['username'] = 'aengland94';

@@ -40,8 +40,10 @@
                   $statement->execute();
 
                   while($row = $statement->fetch(PDO::FETCH_ASSOC))*/
+                  echo '<script> alert("before foreach"); </script>';
                   foreach ($currentDB->query('SELECT username FROM users') as $row)
                   {
+                     echo '<script> alert("in foreach"); </script>';
                      echo '<p class="col-md-4">' . $row['username'] . '</p>';
                   }
                

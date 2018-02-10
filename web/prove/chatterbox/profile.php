@@ -36,13 +36,13 @@
          <div class="container"> 
             <div class="row">
                <?php 
-                  $statement = $db->prepare("SELECT username FROM public.users");
+                  /*$statement = $db->prepare("SELECT username FROM public.users");
                   $statement->execute();
 
                   while($row = $statement->fetch(PDO::FETCH_ASSOC))
                   {
                      echo '<p class="col-md-4">' . $row['username'] . '</p>';
-                  }
+                  }*/
                
                ?> 
             </div>

@@ -1,11 +1,38 @@
 <?php 
-   require "db.php";
+   $db = NULL;
+
+    try 
+    {
+       $dbUrl = getenv('DATABASE_URL');
+       /*if (!isset($dbUrl) || empty($dbUrl))
+          echo '<script> alert("Not Set"); </script>';
+       else
+          echo '<script> alert("Set"); </script>';*/
+       $dbopts = parse_url($dbUrl);
+       $dbHost = $dbopts["host"];
+       $dbPort = $dbopts["port"];
+       $dbUser = $dbopts["user"];
+       $dbPassword = $dbopts["pass"];
+       $dbName = ltrim($dbopts["path"],'/');
+
+       // PDO connection
+       $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+       $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+
+    }  catch (PDOException $ex) 
+    {
+       echo "Error! Cannot connect to DB because: $ex";
+
+       die();
+    }
+   //require "db.php";
    //session_unset();
    // if(!isset($_SESSION['username'])){
    //    $_SESSION['username'] = 'aengland94';
 
    //connect to database
-   connectToDB();
+   //connectToDB();
    //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +68,7 @@
 
                   while($row = $statement->fetch(PDO::FETCH_ASSOC))*/
                   echo '<script> alert("before foreach"); </script>';
-                  foreach ($currentDB->query('SELECT username FROM users') as $row)
+                  foreach ($db->query('SELECT username FROM users') as $row)
                   {
                      echo '<script> alert("in foreach"); </script>';
                      echo '<p class="col-md-4">' . $row['username'] . '</p>';

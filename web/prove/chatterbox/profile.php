@@ -5,7 +5,7 @@
    //    $_SESSION['username'] = 'aengland94';
 
    //connect to database
-   //connectToDB();
+   connectToDB();
    //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -36,13 +36,13 @@
          <div class="container"> 
             <div class="row">
                <?php 
-                  /*$statement = $db->prepare("SELECT username FROM public.users");
+                  $statement = $currentDB->prepare("SELECT username FROM public.users");
                   $statement->execute();
 
                   while($row = $statement->fetch(PDO::FETCH_ASSOC))
                   {
                      echo '<p class="col-md-4">' . $row['username'] . '</p>';
-                  }*/
+                  }
                
                ?> 
             </div>

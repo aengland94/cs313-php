@@ -10,7 +10,7 @@
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML5>
 <!-- Profile page for Chatterbox -->
 <html>
    <head>
@@ -36,10 +36,11 @@
          <div class="container"> 
             <div class="row">
                <?php 
-                  $statement = $currentDB->prepare("SELECT username FROM public.users");
+                  /*$statement = $currentDB->prepare("SELECT username FROM public.users");
                   $statement->execute();
 
-                  while($row = $statement->fetch(PDO::FETCH_ASSOC))
+                  while($row = $statement->fetch(PDO::FETCH_ASSOC))*/
+                  foreach ($currentDB->query('SELECT username FROM users') as $row)
                   {
                      echo '<p class="col-md-4">' . $row['username'] . '</p>';
                   }

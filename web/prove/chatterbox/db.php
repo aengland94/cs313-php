@@ -8,10 +8,10 @@
       try 
       {
          $dbUrl = getenv('DATABASE_URL');
-         if (!isset($dbUrl) || empty($dbUrl))
+         /*if (!isset($dbUrl) || empty($dbUrl))
             echo '<script> alert("Not Set"); </script>';
          else
-            echo '<script> alert("Set"); </script>';
+            echo '<script> alert("Set"); </script>';*/
          $dbopts = parse_url($dbUrl);
          $dbHost = $dbopts["host"];
          $dbPort = $dbopts["port"];

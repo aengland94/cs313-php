@@ -5,7 +5,7 @@
    //    $_SESSION['username'] = 'aengland94';
 
    //connect to database
-   connectToDB();
+   //connectToDB();
    //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

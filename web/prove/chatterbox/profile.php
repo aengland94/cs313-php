@@ -47,6 +47,7 @@
    //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   echo '<script> alert("' . $_SESSION['contact_id'] . '"); </script>';
 ?>
 <!DOCTYPE html>
 <!-- Profile page for Chatterbox -->

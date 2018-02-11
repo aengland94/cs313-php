@@ -79,6 +79,9 @@
             <div class="row">
               <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
             </div>
+            <div class="row">
+              <h2 class="col-md-4">Contacts:</h2>
+            </div>
             <?php 
               /*$statement = $currentDB->prepare("SELECT username FROM public.users");
               $statement->execute();
@@ -91,7 +94,7 @@
                                               WHERE c.user_id = " . $_SESSION['user_id'] .
                                               "ORDER BY u.display_name;") as $row)
               {
-                 echo '<div class="row"><p class="col-md-4">' . $row['display_name'] . '</p></div>';
+                 echo '<div class="row"><button class="col-md-4" onclick="setMessages(' . $row['contact_id'] . ')">' . $row['display_name'] . '</button></div>';
               }
            
             ?> 

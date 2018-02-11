@@ -46,7 +46,7 @@
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<!DOCTYPE HTML5>
+<!DOCTYPE html>
 <!-- Profile page for Chatterbox -->
 <html>
    <head>
@@ -85,7 +85,7 @@
                                               WHERE c.user_id = 2
                                               ORDER BY u.display_name;") as $row)
               {
-                 echo '<div class="row"><p class="col-md-4">' . $row['u.display_name'] . '</p></div>';
+                 echo '<div class="row"><p class="col-md-4">' . $row['display_name'] . '</p></div>';
               }
            
             ?> 

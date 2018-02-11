@@ -47,7 +47,7 @@
    //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   echo '<script> alert("' . $_SESSION['contact_id'] . '"); </script>';
+   //echo '<script> alert("' . $_SESSION['contact_id'] . '"); </script>';
 ?>
 <!DOCTYPE html>
 <!-- Profile page for Chatterbox -->
@@ -110,7 +110,6 @@
                  }
                  else
                  {
-                    echo '<script> alert("before foreach"); </script>';
                     foreach ($_SESSION['db']->query("SELECT * FROM messages AS m
                                                      JOIN contacts AS c 
                                                      ON c.id = m.contact_id
@@ -120,7 +119,6 @@
                                                      AND (c.user_id = 3 OR c.contact_id = 3)
                                                      ORDER BY m.id") as $row)
                     {
-                        echo '<script> alert("Inside foreach"); </script>';
                         if ($row['user_id'] == $_SESSION['user_id'])
                         {
                            echo "<div class='row'><h3 class='col-md-6'>You</h3></div>";

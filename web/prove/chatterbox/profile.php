@@ -118,7 +118,7 @@
                                                      ON u.id = c.user_id
                                                      WHERE (c.user_id = 2 OR c.contact_id = 2)
                                                      AND (c.user_id = 3 OR c.contact_id = 3)
-                                                     ORDER BY m.id) as $row)
+                                                     ORDER BY m.id") as $row)
                     {
                         echo '<script> alert("Inside foreach"); </script>';
                         if ($row['user_id'] == $_SESSION['user_id'])

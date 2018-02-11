@@ -112,13 +112,13 @@
                  {
                     echo '<script> alert("before foreach"); </script>';
                     foreach ($_SESSION['db']->query("SELECT * FROM messages AS m
-                                                    JOIN contacts AS c 
-                                                    ON c.id = m.contact_id 
-                                                    JOIN users AS u
-                                                    ON u.id = c.contact_id
-                                                    WHERE (c.user_id = " . $_SESSION['user_id'] . " OR c.contact_id" . $_SESSION['user_id'] . 
-                                                    ") AND  (c.user_id = " . $_SESSION['contact_id'] . " OR c.contact_id" . $_SESSION['contact_id'] . 
-                                              ") ORDER BY m.id;") as $row)
+                                                     JOIN contacts AS c 
+                                                     ON c.id = m.contact_id
+                                                     JOIN users AS u
+                                                     ON u.id = c.user_id
+                                                     WHERE (c.user_id = 2 OR c.contact_id = 2)
+                                                     AND (c.user_id = 3 OR c.contact_id = 3)
+                                                     ORDER BY m.id) as $row)
                     {
                         echo '<script> alert("Inside foreach"); </script>';
                         if ($row['user_id'] == $_SESSION['user_id'])

@@ -1,4 +1,5 @@
-<?php 
+<?php
+   session_start(); 
    $db = NULL;
 
     try 
@@ -26,6 +27,14 @@
 
        die();
     }
+    if (!isset($_SESSION['db']))
+       $_SESSION['db'] = $db;
+    if (!isset($_SESSION['username']))
+       $_SESSION['username'] = 'hpotter';
+    if (!isset($_SESSION['display_name']))
+       $_SESSION['display_name'] = 'Harry Potter';
+    if (!isset($_SESSION['user_id']))
+       $_SESSION['user_id'] = 2;
    //require "db.php";
    //session_unset();
    // if(!isset($_SESSION['username'])){
@@ -59,23 +68,24 @@
    </head>
    <body>
       <div class="body">
-         <h1>test</h1>
+         
          <div class="container"> 
             <div class="row">
-               <?php 
-                  /*$statement = $currentDB->prepare("SELECT username FROM public.users");
-                  $statement->execute();
-
-                  while($row = $statement->fetch(PDO::FETCH_ASSOC))*/
-                  echo '<script> alert("before foreach"); </script>';
-                  foreach ($db->query('SELECT username FROM users') as $row)
-                  {
-                     echo '<script> alert("in foreach"); </script>';
-                     echo '<p class="col-md-4">' . $row['username'] . '</p>';
-                  }
-               
-               ?> 
+              <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
             </div>
+            <?php 
+              /*$statement = $currentDB->prepare("SELECT username FROM public.users");
+              $statement->execute();
+
+              while($row = $statement->fetch(PDO::FETCH_ASSOC))*/
+              /*echo '<script> alert("before foreach"); </script>';*/
+              foreach ($_SESSION['db']->query('SELECT username FROM users') as $row)
+              {
+                 echo '<div class="row"><p class="col-md-4">' . $row['username'] . '</p></div>';
+              }
+           
+            ?> 
+            
          </div>
       </div>
    </body>

@@ -87,6 +87,12 @@
             ?> 
             
          </div>
+         <div class="container">
+            <form class="row" action="" method="POST">
+               <textarea rows="3" maxlength="250" class="col-md-6" autofocus></textarea>
+               <input type="submit" name="submit" value="send" class="col-md-2">
+            </form>
+         </div>
       </div>
    </body>
 </html>

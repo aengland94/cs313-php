@@ -82,8 +82,8 @@
               foreach ($_SESSION['db']->query("SELECT * FROM contacts AS c
                                               JOIN users AS u
                                               ON u.id = c.contact_id
-                                              WHERE c.user_id = $_SESSION['user_id']
-                                              ORDER BY u.display_name;") as $row)
+                                              WHERE c.user_id = " . $_SESSION['user_id'] .
+                                              "ORDER BY u.display_name;") as $row)
               {
                  echo '<div class="row"><p class="col-md-4">' . $row['display_name'] . '</p></div>';
               }

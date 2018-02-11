@@ -85,7 +85,7 @@
                                               WHERE c.user_id = 2
                                               ORDER BY u.display_name;") as $row)
               {
-                 echo '<div class="row"><p class="col-md-4">' . $row['username'] . '</p></div>';
+                 echo '<div class="row"><p class="col-md-4">' . $row['u.display_name'] . '</p></div>';
               }
            
             ?> 

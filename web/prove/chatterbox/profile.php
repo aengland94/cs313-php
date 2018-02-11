@@ -35,6 +35,8 @@
        $_SESSION['display_name'] = 'Harry Potter';
     if (!isset($_SESSION['user_id']))
        $_SESSION['user_id'] = 2;
+    if (!isset($_SESSION['contact_id']))
+       $_SESSION['contact_id'] = 0;
    //require "db.php";
    //session_unset();
    // if(!isset($_SESSION['username'])){
@@ -63,7 +65,11 @@
         <!-- Bootstrap Javascript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
         <script>
-          
+           function setMessages(newContact){
+            $.post("messages.php", {contact: newContact}, function(){ 
+                location.reload(true);
+            });
+          }
         </script>
    </head>
    <body>
@@ -92,6 +98,33 @@
             
          </div>
          <div class="container">
+            <div class="row">
+              <?php 
+                 if ($_SESSION['contact_id'] == 0)
+                    echo "<h2 class='col-md-6'>Click on a contact to send them a message and view the conversation you have had with them.</h2>";
+                 else
+                    foreach ($_SESSION['db']->query("SELECT * FROM messages AS m
+                                                    JOIN contacts AS c 
+                                                    ON c.id = m.contact_id 
+                                                    JOIN users AS u
+                                                    ON u.id = c.contact_id
+                                                    WHERE (c.user_id = " . $_SESSION['user_id'] . " OR c.contact_id" . $_SESSION['user_id'] . 
+                                                    ") AND  (c.user_id = " . $_SESSION['contact_id'] . " OR c.contact_id" . $_SESSION['contact_id'] . 
+                                              ") ORDER BY m.id;") as $row)
+                    {
+                        if ($row['user_id'] == $_SESSION['user_id'])
+                        {
+                           echo "<div class='row'><h3 class='col-md-6'>You</h3></div>";
+                           echo "<div class='row'><p class='col-md-6'>" . $row['message_text'] . "</p></div>";
+                        }
+                        else
+                        {
+                           echo "<div class='row'><h3 class='col-md-6'>" . $row['display_name'] . "</h3></div>";
+                           echo "<div class='row'><p class='col-md-6'>" . $row['message_text'] . "</p></div>";
+                        }
+                    }
+              ?>
+            </div>
             <form class="row" action="" method="POST">
                <textarea rows="3" maxlength="250" class="col-md-6" autofocus></textarea>
                <input type="submit" name="submit" value="send" class="col-md-2">

@@ -115,19 +115,19 @@
                                                      ON c.id = m.contact_id
                                                      JOIN users AS u
                                                      ON u.id = c.user_id
-                                                     WHERE (c.user_id = 2 OR c.contact_id = 2)
-                                                     AND (c.user_id = 3 OR c.contact_id = 3)
+                                                     WHERE (c.user_id = " . $_SESSION['user_id'] . " OR c.contact_id = " . $_SESSION['user_id'] . ")
+                                                     AND (c.user_id = " . $_SESSION['contact_id'] . " OR c.contact_id = " . $_SESSION['contact_id'] . ")
                                                      ORDER BY m.id") as $row)
                     {
                         if ($row['user_id'] == $_SESSION['user_id'])
                         {
-                           echo "<div class='row'><h3 class='col-md-6'>You</h3></div>";
-                           echo "<div class='row'><p class='col-md-6'>" . $row['message_text'] . "</p></div>";
+                           echo "<h3 class='col-md-6'>You</h3>";
+                           echo "<p class='col-md-6'>" . $row['message_text'] . "</p>";
                         }
                         else
                         {
-                           echo "<div class='row'><h3 class='col-md-6'>" . $row['display_name'] . "</h3></div>";
-                           echo "<div class='row'><p class='col-md-6'>" . $row['message_text'] . "</p></div>";
+                           echo "<h3 class='col-md-6'>" . $row['display_name'] . "</h3>";
+                           echo "<p class='col-md-6'>" . $row['message_text'] . "</p>";
                         }
                     }
                  }

@@ -52,7 +52,7 @@
    <head>
    	  <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>My Page</title>
+        <title><?php echo $_SESSION['display_name']; ?></title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
    	    <link rel="stylesheet" type="text/css" href="../../css/basic.css"/>
@@ -79,7 +79,11 @@
 
               while($row = $statement->fetch(PDO::FETCH_ASSOC))*/
               /*echo '<script> alert("before foreach"); </script>';*/
-              foreach ($_SESSION['db']->query('SELECT username FROM users') as $row)
+              foreach ($_SESSION['db']->query("SELECT * FROM contacts AS c
+                                              JOIN users AS u
+                                              ON u.id = c.contact_id
+                                              WHERE c.user_id = $_SESSION['user_id']
+                                              ORDER BY u.display_name;") as $row)
               {
                  echo '<div class="row"><p class="col-md-4">' . $row['username'] . '</p></div>';
               }

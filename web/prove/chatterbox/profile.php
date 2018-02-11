@@ -106,6 +106,8 @@
                  if ($_SESSION['contact_id'] == 0)
                     echo "<h2 class='col-md-6'>Click on a contact to send them a message and view the conversation you have had with them.</h2>";
                  else
+                 {
+                    echo "<script> alert("before foreach"); </script>";
                     foreach ($_SESSION['db']->query("SELECT * FROM messages AS m
                                                     JOIN contacts AS c 
                                                     ON c.id = m.contact_id 
@@ -115,6 +117,7 @@
                                                     ") AND  (c.user_id = " . $_SESSION['contact_id'] . " OR c.contact_id" . $_SESSION['contact_id'] . 
                                               ") ORDER BY m.id;") as $row)
                     {
+                        echo "<script> alert("Inside foreach"); </script>";
                         if ($row['user_id'] == $_SESSION['user_id'])
                         {
                            echo "<div class='row'><h3 class='col-md-6'>You</h3></div>";
@@ -126,6 +129,7 @@
                            echo "<div class='row'><p class='col-md-6'>" . $row['message_text'] . "</p></div>";
                         }
                     }
+                 }
               ?>
             </div>
             <form class="row" action="" method="POST">

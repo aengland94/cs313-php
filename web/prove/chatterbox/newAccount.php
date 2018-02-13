@@ -8,12 +8,12 @@
 <!-- Login page for Chatterbox -->
 <html>
    <head>
-   	  <meta charset="utf-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Login</title>
+        <title>New Account</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-   	    <link rel="stylesheet" type="text/css" href="../../css/basic.css"/>
+          <link rel="stylesheet" type="text/css" href="../../css/basic.css"/>
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Popper -->
@@ -26,17 +26,25 @@
    </head>
    <body>
       <div class="body">
-          <form action="<?php echo htmlspecialchars('validateLogin.php'); ?>" class="container"> 
+          <form action="<?php echo htmlspecialchars('validateNewAccount.php'); ?>" class="container"> 
+             <div class="row">
+                <h3 class="col-md-4">Display Name:</h3>
+                <input type="text" name="display_name" class="col-md-4" maxlength="30">
+             </div>
              <div class="row">
                 <h3 class="col-md-4">Username:</h3>
                 <input type="text" name="username" class="col-md-4" maxlength="30">
              </div>
              <div class="row">
                 <h3 class="col-md-4">Password:</h3>
-                <input type="password" name="password" class="col-md-4" maxlength="30">
+                <input type="password" name="password1" class="col-md-4" maxlength="30">
              </div>
              <div class="row">
-                <button class="col-md-4"><a href="newAccount.php">Create Account</a></button>
+                <h3 class="col-md-4">Password (again):</h3>
+                <input type="password" name="password2" class="col-md-4" maxlength="30">
+             </div>
+             <div class="row">
+                <button class="col-md-4"><a href="login.php">Already hav an account?</a></button>
                 <input type="submit" name="submit" value="Login" class="col-md-4">
               </div>
           </form>

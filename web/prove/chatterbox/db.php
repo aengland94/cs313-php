@@ -46,7 +46,7 @@
 
       $db = getDB();
 
-      $stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
+      $stmt = $db->prepare('SELECT * FROM public.users WHERE username=:username');
      $stmt->execute(array(':username' => $username););
      $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

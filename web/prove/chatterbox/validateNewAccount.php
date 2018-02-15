@@ -8,9 +8,9 @@
    $isValid = true;
 
    //check that all field are filled
-   if(!isset($_POST['display'])   ||
-      !isset($_POST['username'])  ||
-      !isset($_POST['password1']) ||
+   if(!isset($_POST['display_name'])   ||
+      !isset($_POST['username'])       ||
+      !isset($_POST['password1'])      ||
       !isset($_POST['password2']))
    {
       $_SESSION['isFull'] = false;
@@ -31,7 +31,7 @@
    {
       $_SESSION['isUsernameFree'] = true;
    }
-   
+
    //check for matching passwords
    if ($_POST['password1'] != $_POST['password2'])
    {

@@ -48,7 +48,7 @@
 
       $query = $db->query($usernameQuery);
       //check if $username is in $currentDB
-      if (count($query) < 1)
+      if ($query[0]['username'] == $username)
          return false;
       else
          return true;

@@ -1,5 +1,6 @@
 <?php 
    session_start();
+   echo '<script> alert("before foreach"); </script>';
 
    $isValid = true;
 

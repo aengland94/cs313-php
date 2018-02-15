@@ -1,4 +1,5 @@
 <?php
+   session_start();
    $currentDB = NULL;
 
    function getDB() 

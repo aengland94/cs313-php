@@ -1,32 +1,32 @@
 <?php
    session_start(); 
-   $db = NULL;
+   // $db = NULL;
 
-    try 
-    {
-       $dbUrl = getenv('DATABASE_URL');
-       /*if (!isset($dbUrl) || empty($dbUrl))
-          echo '<script> alert("Not Set"); </script>';
-       else
-          echo '<script> alert("Set"); </script>';*/
-       $dbopts = parse_url($dbUrl);
-       $dbHost = $dbopts["host"];
-       $dbPort = $dbopts["port"];
-       $dbUser = $dbopts["user"];
-       $dbPassword = $dbopts["pass"];
-       $dbName = ltrim($dbopts["path"],'/');
+   //  try 
+   //  {
+   //     $dbUrl = getenv('DATABASE_URL');
+   //     /*if (!isset($dbUrl) || empty($dbUrl))
+   //        echo '<script> alert("Not Set"); </script>';
+   //     else
+   //        echo '<script> alert("Set"); </script>';*/
+   //     $dbopts = parse_url($dbUrl);
+   //     $dbHost = $dbopts["host"];
+   //     $dbPort = $dbopts["port"];
+   //     $dbUser = $dbopts["user"];
+   //     $dbPassword = $dbopts["pass"];
+   //     $dbName = ltrim($dbopts["path"],'/');
 
-       // PDO connection
-       $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+   //     // PDO connection
+   //     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-       $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+   //     $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
-    }  catch (PDOException $ex) 
-    {
-       echo "Error! Cannot connect to DB because: $ex";
+   //  }  catch (PDOException $ex) 
+   //  {
+   //     echo "Error! Cannot connect to DB because: $ex";
 
-       die();
-    }
+   //     die();
+   //  }
     if (!isset($_SESSION['db']))
        $_SESSION['db'] = $db;
     if (!isset($_SESSION['username']))
@@ -37,12 +37,13 @@
        $_SESSION['user_id'] = 2;
     if (!isset($_SESSION['contact_id']))
        $_SESSION['contact_id'] = 0;
-   //require "db.php";
+   require "db.php";
    //session_unset();
    // if(!isset($_SESSION['username'])){
    //    $_SESSION['username'] = 'aengland94';
 
    //connect to database
+   $db = getDB();
    //connectToDB();
    //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
    //$stmt->execute(array(':username' => $_SESSION['username']););

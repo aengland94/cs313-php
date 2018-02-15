@@ -42,7 +42,7 @@
 
    function checkUsername($username)
    {
-      $usernameQuery = "SELECT username FROM users WHERE username = " . $username;
+      $usernameQuery = "SELECT username FROM users WHERE username = " . $username . ";";
 
       if($currentDB == NULL)
          connectToDB();

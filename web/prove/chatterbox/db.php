@@ -46,7 +46,11 @@
 
       $db = getDB();
 
-      $query = $db->query($usernameQuery);
+      $stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
+     $stmt->execute(array(':username' => $username););
+     $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      //$query = $db->query($usernameQuery);
       //check if $username is in $currentDB
       foreach ($query as $row)
          if ($row['username'] == $username)

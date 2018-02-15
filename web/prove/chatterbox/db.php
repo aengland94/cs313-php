@@ -44,10 +44,9 @@
    {
       $usernameQuery = "SELECT username FROM users WHERE username = " . $username . ";";
 
-      if($currentDB == NULL)
-         connectToDB();
+      $db = getDB();
 
-      $query = $currentDB->query("SELECT * FROM contacts;");
+      $query = $db->query("SELECT * FROM contacts;");
       //check if $username is in $currentDB
       // if (count($query) < 1)
       //    return false;

@@ -48,9 +48,9 @@
          connectToDB();
 
       // check if $username is in $currentDB
-      if (count($currentDB->query($usernameQuery)) < 1)
-         return false;
-      else
+      // if (count($currentDB->query($usernameQuery)) < 1)
+      //    return false;
+      // else
          return true;
    }
 ?>

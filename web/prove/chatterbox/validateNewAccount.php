@@ -4,7 +4,7 @@
    $isValid = true;
 
    //check that all field are filled
-   if(!isset($_POST['display'])   ||
+   /*if(!isset($_POST['display'])   ||
       !isset($_POST['username'])  ||
       !isset($_POST['password1']) ||
       !isset($_POST['password2']))
@@ -15,7 +15,7 @@
    else
    {
       $_SESSION['isFull'] = true;
-   }
+   }*/
 
    //check for matching passwords
    if ($_POST['password1'] != $_POST['password2'])
@@ -25,6 +25,7 @@
    }
    else
    {
+      echo "<script>alert('" . $_POST['password1'] . " = " . $_POST['password2'] . "');</script>";;
       $_SESSION['isPassMatch'] = true;
    }
 

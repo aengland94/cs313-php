@@ -17,16 +17,18 @@
       $_SESSION['isFull'] = true;
    }*/
 
+   echo '<script> alert("Inside this thing"); </script>';
+
    //check for matching passwords
    if ($_POST['password1'] != $_POST['password2'])
    {
-      echo "<script>alert('" . $_POST['password1'] . " != " . $_POST['password2'] . "');</script>";
+      echo '<script> alert("' . $_POST['password1'] . ' != ' . $_POST['password2'] . '"); </script>';
       $_SESSION['isPassMatch'] = false;
       $isValid = false;
    }
    else
    {
-      echo "<script>alert('" . $_POST['password1'] . " = " . $_POST['password2'] . "');</script>";
+      echo '<script> alert("' . $_POST['password1'] . ' = ' . $_POST['password2'] . '"); </script>';
       $_SESSION['isPassMatch'] = true;
    }
 

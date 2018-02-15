@@ -39,4 +39,18 @@
    {
       $currentDB = getDB();
    }
+
+   function checkUsername($username)
+   {
+      $usernameQuery = "SELECT username FROM users WHERE username = " . $username;
+      
+      if($currentDB == NULL)
+         connectToDB();
+
+      // check if $username is in $currentDB
+      if (count($currentDB->query($usernameQuery)) < 1)
+         return false;
+      else
+         return true;
+   }
 ?>

@@ -1,11 +1,14 @@
 <?php 
    session_start();
-   echo '<script> alert("before foreach"); </script>';
+
+   // connect to db
+   require "db.php";
+   $db = getDB();
 
    $isValid = true;
 
    //check that all field are filled
-   /*if(!isset($_POST['display'])   ||
+   if(!isset($_POST['display'])   ||
       !isset($_POST['username'])  ||
       !isset($_POST['password1']) ||
       !isset($_POST['password2']))
@@ -16,20 +19,27 @@
    else
    {
       $_SESSION['isFull'] = true;
-   }*/
+   }
 
-   echo '<script> alert("Inside this thing"); </script>';
-
+   //check if username is taken
+   if (checkUsername($_POST['username']))
+   {
+      $_SESSION['isUsernameFree'] = false;
+      $isValid = false;
+   }
+   else
+   {
+      $_SESSION['isUsernameFree'] = true;
+   }
+   
    //check for matching passwords
    if ($_POST['password1'] != $_POST['password2'])
    {
-      echo '<script> alert("' . $_POST['password1'] . ' != ' . $_POST['password2'] . '"); </script>';
       $_SESSION['isPassMatch'] = false;
       $isValid = false;
    }
    else
    {
-      echo '<script> alert("' . $_POST['password1'] . ' = ' . $_POST['password2'] . '"); </script>';
       $_SESSION['isPassMatch'] = true;
    }
 

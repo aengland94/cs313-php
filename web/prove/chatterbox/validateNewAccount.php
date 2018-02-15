@@ -10,6 +10,7 @@
       !isset($_POST['password2']))
    {
       $_SESSION['isFull'] = false;
+      $isValid = false;
    }
    else
    {
@@ -20,6 +21,7 @@
    if ($_POST['password1'] != $_POST['password2'])
    {
       $_SESSION['isPassMatch'] = false;
+      $isValid = false;
    }
    else
    {

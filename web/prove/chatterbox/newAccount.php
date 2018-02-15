@@ -2,6 +2,12 @@
    session_start();
    //session_unset();
    
+   if(!isset($_SESSION['isUsernameFree']))
+      $_SESSION['isUsernameFree'] = true;
+   if(!isset($_SESSION['isFull']))
+      $_SESSION['isFull'] = true;
+   if(!isset($_SESSION['isPassMatch']))
+      $_SESSION['isPassMatch'] = true;
 
 ?>
 <!DOCTYPE html>
@@ -34,6 +40,10 @@
              <div class="row">
                 <h3 class="col-md-4">Username:</h3>
                 <input type="text" name="username" class="col-md-4" maxlength="30">
+                <?php 
+                   if(!$_SESSION['isUsernameFree'])
+                     echo '<h3 class="col-md-4 error">ERROR: Username already exists</h3>'; 
+                ?>
              </div>
              <div class="row">
                 <h3 class="col-md-4">Password:</h3>
@@ -42,10 +52,18 @@
              <div class="row">
                 <h3 class="col-md-4">Password (again):</h3>
                 <input type="password" name="password2" class="col-md-4" maxlength="30">
+                <?php 
+                   if(!$_SESSION['isPassMatch'])
+                     echo '<h3 class="col-md-4 error">ERROR: Passwords must match</h3>'; 
+                ?>
              </div>
              <div class="row">
-                <button class="col-md-4"><a href="login.php">Already hav an account?</a></button>
+                <button class="col-md-4"><a href="login.php">Already have an account?</a></button>
                 <input type="submit" name="submit" value="Login" class="col-md-4">
+                <?php 
+                   if(!$_SESSION['isFull'])
+                     echo '<h3 class="col-md-4 error">ERROR: All field must be completed</h3>'; 
+                ?>
               </div>
           </form>
       </div>

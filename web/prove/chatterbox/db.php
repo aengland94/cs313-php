@@ -46,7 +46,7 @@
 
       $db = getDB();
 
-      $query = $db->query("SELECT * FROM contacts;");
+      $query = $db->query($usernameQuery);
       //check if $username is in $currentDB
       // if (count($query) < 1)
       //    return false;

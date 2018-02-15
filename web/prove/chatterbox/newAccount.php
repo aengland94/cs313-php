@@ -32,7 +32,7 @@
    </head>
    <body>
       <div class="body">
-          <form action="<?php echo htmlspecialchars('validateNewAccount.php'); ?>" class="container"> 
+          <form action="<?php echo htmlspecialchars('validateNewAccount.php'); ?>" method="POST" class="container"> 
              <div class="row">
                 <h3 class="col-md-4">Display Name:</h3>
                 <input type="text" name="display_name" class="col-md-4" maxlength="30">

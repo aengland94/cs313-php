@@ -26,7 +26,7 @@
    </head>
    <body>
       <div class="body">
-          <form action="<?php echo htmlspecialchars('validateLogin.php'); ?>" class="container"> 
+          <form action="<?php echo htmlspecialchars('validateLogin.php'); ?>" method="POST" class="container"> 
              <div class="row">
                 <h3 class="col-md-4">Username:</h3>
                 <input type="text" name="username" class="col-md-4" maxlength="30">

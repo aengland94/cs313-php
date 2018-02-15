@@ -27,16 +27,7 @@
 
    //     die();
    //  }
-    if (!isset($_SESSION['db']))
-       $_SESSION['db'] = $db;
-    if (!isset($_SESSION['username']))
-       $_SESSION['username'] = 'hpotter';
-    if (!isset($_SESSION['display_name']))
-       $_SESSION['display_name'] = 'Harry Potter';
-    if (!isset($_SESSION['user_id']))
-       $_SESSION['user_id'] = 2;
-    if (!isset($_SESSION['contact_id']))
-       $_SESSION['contact_id'] = 0;
+   
    require "db.php";
    //session_unset();
    // if(!isset($_SESSION['username'])){
@@ -49,6 +40,17 @@
    //$stmt->execute(array(':username' => $_SESSION['username']););
    //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
    //echo '<script> alert("' . $_SESSION['contact_id'] . '"); </script>';
+
+    if (!isset($_SESSION['db']))
+       $_SESSION['db'] = $db;
+    if (!isset($_SESSION['username']))
+       $_SESSION['username'] = 'hpotter';
+    if (!isset($_SESSION['display_name']))
+       $_SESSION['display_name'] = 'Harry Potter';
+    if (!isset($_SESSION['user_id']))
+       $_SESSION['user_id'] = 2;
+    if (!isset($_SESSION['contact_id']))
+       $_SESSION['contact_id'] = 0;
 ?>
 <!DOCTYPE html>
 <!-- Profile page for Chatterbox -->

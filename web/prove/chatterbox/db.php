@@ -52,7 +52,7 @@
       // if (count($query) < 1)
       //    return false;
       // else
-      $test = count($query);
+      //$test = count($query);
          return true;
    }
 ?>

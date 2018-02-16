@@ -4,7 +4,7 @@
    // connect to db
    require "db.php";
 
-   $isValid = true;
+   $isValid = false;
 
    if (checkPassword($_POST['username'], $_POST['password']))
    {

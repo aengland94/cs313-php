@@ -1,8 +1,8 @@
 <?php 
    session_start();
    //session_unset();
-   
-
+   if(!isset($_SESSION['isValid']))
+     $_SESSION['isValid'] = true;
 ?>
 <!DOCTYPE html>
 <!-- Login page for Chatterbox -->
@@ -14,6 +14,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
    	    <link rel="stylesheet" type="text/css" href="../../css/basic.css"/>
+        <link rel="stylesheet" type="text/css" href="chatterbox.css"/>
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Popper -->
@@ -34,6 +35,10 @@
              <div class="row">
                 <h3 class="col-md-4">Password:</h3>
                 <input type="password" name="password" class="col-md-4" maxlength="30">
+                <?php 
+                   if(!$_SESSION['isValid'])
+                     echo '<h3 class="col-md-6 error">ERROR: Username and/or password is incorrect</h3>'; 
+                ?>
              </div>
              <div class="row">
                 <button class="col-md-4"><a href="newAccount.php">Create Account</a></button>

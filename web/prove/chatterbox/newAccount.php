@@ -19,7 +19,8 @@
         <title>New Account</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-          <link rel="stylesheet" type="text/css" href="../../css/basic.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/basic.css"/>
+        <link rel="stylesheet" type="text/css" href="chatterbox.css"/>
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Popper -->
@@ -42,7 +43,7 @@
                 <input type="text" name="username" class="col-md-4" maxlength="30">
                 <?php 
                    if(!$_SESSION['isUsernameFree'])
-                     echo '<h3 class="col-md-4 error">ERROR: Username already exists</h3>'; 
+                     echo '<h3 class="col-md-6 error">ERROR: Username already exists</h3>'; 
                 ?>
              </div>
              <div class="row">
@@ -54,7 +55,7 @@
                 <input type="password" name="password2" class="col-md-4" maxlength="30">
                 <?php 
                    if(!$_SESSION['isPassMatch'])
-                     echo '<h3 class="col-md-4 error">ERROR: Passwords must match</h3>'; 
+                     echo '<h3 class="col-md-6 error">ERROR: Passwords must match</h3>'; 
                 ?>
              </div>
              <div class="row">
@@ -62,7 +63,7 @@
                 <input type="submit" name="submit" value="Login" class="col-md-4">
                 <?php 
                    if(!$_SESSION['isFull'])
-                     echo '<h3 class="col-md-4 error">ERROR: All field must be completed</h3>'; 
+                     echo '<h3 class="col-md-6 error">ERROR: All field must be completed</h3>'; 
                 ?>
               </div>
           </form>

@@ -27,7 +27,7 @@
 
    //     die();
    //  }
-   
+
    require "db.php";
    //session_unset();
    // if(!isset($_SESSION['username'])){
@@ -62,6 +62,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
    	    <link rel="stylesheet" type="text/css" href="../../css/basic.css"/>
+        <link rel="stylesheet" type="text/css" href="chatterbox.css"/>
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Popper -->
@@ -124,13 +125,13 @@
                     {
                         if ($row['user_id'] == $_SESSION['user_id'])
                         {
-                           echo "<h3 class='col-md-6'>You</h3>";
-                           echo "<p class='col-md-6'>" . $row['message_text'] . "</p>";
+                           echo "<h3 class='col-md-6 you'>You</h3>";
+                           echo "<p class='col-md-6 you'>" . $row['message_text'] . "</p>";
                         }
                         else
                         {
-                           echo "<h3 class='col-md-6'>" . $row['display_name'] . "</h3>";
-                           echo "<p class='col-md-6'>" . $row['message_text'] . "</p>";
+                           echo "<h3 class='col-md-6 them'>" . $row['display_name'] . "</h3>";
+                           echo "<p class='col-md-6 them'>" . $row['message_text'] . "</p>";
                         }
                     }
                  }

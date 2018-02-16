@@ -60,7 +60,7 @@
    {
       $db = getDB();
 
-      $stmt = $db->prepare('INSERT INTO users (username, password, display_name) VALUES :username, :password, :display_name');
+      $stmt = $db->prepare('INSERT INTO users (username, password, display_name) VALUES (:username, :password, :display_name)');
       $stmt->execute(array(':username' => $username, ':password' => $password, ':display_name' => $display_name));
    }
 

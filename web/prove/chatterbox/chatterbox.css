@@ -1,15 +1,15 @@
-<!-- css for chatterbox -->
+/*css for chatterbox*/
 .error 
 {
    color: red;
 }
 
-.you
+p.you
 {
    background-color: #A2FFF5; 
 }
 
-.them
+p.them
 {
    background-color: #ccc;
    color: #333;

@@ -4,13 +4,31 @@
    color: red;
 }
 
+h3.you
+{
+   color: #A2FFF5;
+   margin-bottom: 0px;
+}
+
 p.you
 {
    background-color: #A2FFF5; 
+   margin: 0px 30px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+h3.them
+{
+   color: #ccc;
+   margin-bottom: 0px;
 }
 
 p.them
 {
    background-color: #ccc;
    color: #333;
+   margin: 0px 30px;
+   padding-top: 10px;
+   padding-bottom: 10px;
 }

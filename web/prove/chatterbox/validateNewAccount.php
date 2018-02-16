@@ -47,6 +47,8 @@
    //check for matching passwords
    if ($isValid)
    {
+      insertUser($_POST['username'], $_POST['password1'], $_POST['display_name']);
+      setUser($_POST['username']);
       header("Location: profile.php");
    }
    else

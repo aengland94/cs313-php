@@ -42,20 +42,41 @@
 
    function checkUsername($username)
    {
-      $usernameQuery = "SELECT username FROM users WHERE username = '" . $username . "';";
-
       $db = getDB();
 
       $stmt = $db->prepare('SELECT * FROM users WHERE username=:username');
-     $stmt->execute(array(':username' => $username));
-     $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $stmt->execute(array(':username' => $username));
+      $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      //$query = $db->query($usernameQuery);
-      //check if $username is in $currentDB
+      //check if $username is in $db
       foreach ($query as $row)
          if ($row['username'] == $username)
             return true;
       
       return false;
+   }
+
+   function insertUser($username, $password, $display_name)
+   {
+      $db = getDB();
+
+      $stmt = $db->prepare('INSERT INTO users (username, password, display_name) VALUES :username, :password, :display_name');
+      $stmt->execute(array(':username' => $username, ':password' => $password, ':display_name' => $display_name));
+   }
+
+   function setUser($username)
+   {
+      $db = getDB();
+
+      $stmt = $db->prepare('SELECT * FROM users WHERE username=:username');
+      $stmt->execute(array(':username' => $username));
+      $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      foreach ($query as $row) 
+      {
+         $_SESSION['user_id'] = $row['id'];
+         $_SESSION['username'] = $row['username'];
+         $_SESSION['display_name'] = $row['display_name'];
+      }
    }
 ?>

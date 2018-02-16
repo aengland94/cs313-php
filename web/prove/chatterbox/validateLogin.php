@@ -3,12 +3,23 @@
 
    // connect to db
    require "db.php";
-   $db = getDB();
 
    $isValid = true;
 
+   if (checkPassword($_POST['username'], $_POST['password']))
+   {
+      $isValid = true;
+      $_SESSION['isValid'] = true;
+   }
+   else
+   {
+      $isValid = false;
+      $_SESSION['isValid'] = false;
+   }
+
    if ($isValid)
    {
+      setUser($_POST['username']);
       header("Location: profile.php");
    }
    else

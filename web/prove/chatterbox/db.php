@@ -56,6 +56,22 @@
       return false;
    }
 
+   function checkPassword($username, $password)
+   {
+      $db = getDB();
+
+      $stmt = $db->prepare('SELECT * FROM users WHERE username=:username AND password=:password');
+      $stmt->execute(array(':username' => $username, ':password' => $password));
+      $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      //check if $username is in $db
+      foreach ($query as $row)
+         if ($row['username'] == $username)
+            return true;
+      
+      return false;
+   }
+
    function insertUser($username, $password, $display_name)
    {
       $db = getDB();

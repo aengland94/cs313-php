@@ -96,18 +96,12 @@
       }
    }
 
-   function getContact($user_id, $contact_id)
+   function getContact($contact_id)
    {
-      if (!isset($_SESSION['contact_id']))
-         return 7;
-
-      if(!isset($_SESSION['user_id']))
-         header('Location: login.php');
-
       $db = getDB();
 
       $stmt = $db->prepare('SELECT * FROM contacts WHERE user_id=:user_id AND contact_id=:contact_id');
-      $stmt->execute(array(':user_id' => $_SESSION['user_id'], ':contact_id' => $_SESSION['contact_id']));
+      $stmt->execute(array(':user_id' => $_SESSION['user_id'], ':contact_id' => $contact_id);
       $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       foreach ($query as $row) 
@@ -115,28 +109,29 @@
          return $row['id'];
       }
 
-      return 6;
+      return 0;
    }
 
-   function insertMessage($user_id, $contact_id, $message_text)
+   function insertMessage($contact_id, $message_text)
    {
       $db = getDB();
 
-      $contacts_id = getContact($user_id, $contacts_id);
+      $contacts_id = getContact($contact_id);
       //$contacts_id = 4;
 
       $stmt = $db->prepare('INSERT INTO messages (contact_id, message_text) VALUES (:contact_id, :message_text)');
       $stmt->execute(array(':contact_id' => $contacts_id, ':message_text' => $message_text));
    }
 
-   function insertContact($user_id, $contact_id)
+   function insertContact($contact_id)
    {
       $db = getDB();
 
-      $contacts_id = getContact($user_id, $contacts_id);
-
-      $stmt = $db->prepare('INSERT INTO contacts (user_id, contact_id) VALUES (:user_id, :contact_id)');
-      $stmt->execute(array(':user_id' => $user_id, ':contact_id' => $contacts_id));
+      if (getContact($contact_id) == 0)
+      {
+         $stmt = $db->prepare('INSERT INTO contacts (user_id, contact_id) VALUES (:user_id, :contact_id)');
+         $stmt->execute(array(':user_id' => $_SESSION['user_id'], ':contact_id' => $contacts_id));
+      }
    }
 
    function getUsers()

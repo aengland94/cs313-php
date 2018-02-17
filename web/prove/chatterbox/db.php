@@ -101,7 +101,7 @@
       $db = getDB();
 
       $stmt = $db->prepare('SELECT * FROM contacts WHERE user_id=:user_id AND contact_id=:contact_id');
-      $stmt->execute(array(':user_id' => $user_id, ':contact_id' => $contact_id));
+      $stmt->execute(array(':user_id' => 2, ':contact_id' => 1));
       $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       foreach ($query as $row) 

@@ -98,6 +98,8 @@
 
    function getContact($user_id, $contact_id)
    {
+      if (!isset($_SESSION['contact_id']) || !isset($_SESSION['user_id']))
+         return 7;
       $db = getDB();
 
       $stmt = $db->prepare('SELECT * FROM contacts WHERE user_id=:user_id AND contact_id=:contact_id');

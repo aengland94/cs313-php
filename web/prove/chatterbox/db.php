@@ -109,15 +109,15 @@
          return $row['id'];
       }
 
-      return -1;
+      return 6;
    }
 
    function insertMessage($user_id, $contact_id, $message_text)
    {
       $db = getDB();
 
-      //$contacts_id = getContact($user_id, $contacts_id);
-      $contacts_id = 4;
+      $contacts_id = getContact($user_id, $contacts_id);
+      //$contacts_id = 4;
 
       $stmt = $db->prepare('INSERT INTO messages (contact_id, message_text) VALUES (:contact_id, :message_text)');
       $stmt->execute(array(':contact_id' => $contacts_id, ':message_text' => $message_text));

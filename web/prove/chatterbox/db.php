@@ -103,7 +103,7 @@
 
       if(!isset($_SESSION['user_id']))
          header('Location: login.php');
-      
+
       $db = getDB();
 
       $stmt = $db->prepare('SELECT * FROM contacts WHERE user_id=:user_id AND contact_id=:contact_id');
@@ -137,5 +137,16 @@
 
       $stmt = $db->prepare('INSERT INTO contacts (user_id, contact_id) VALUES (:user_id, :contact_id)');
       $stmt->execute(array(':user_id' => $user_id, ':contact_id' => $contacts_id));
+   }
+
+   function getUsers()
+   {
+      $db = getDB();
+
+      $stmt = $db->prepare('SELECT * FROM users WHERE username!=:username ORDER BY display_name');
+      $stmt->execute(array(':username' => $_SESSION['username']));
+      $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      return $query;
    }
 ?>

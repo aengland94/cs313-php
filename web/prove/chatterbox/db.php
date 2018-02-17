@@ -143,8 +143,8 @@
    {
       $db = getDB();
 
-      $stmt = $db->prepare('SELECT * FROM users WHERE username!=:username ORDER BY display_name');
-      $stmt->execute(array(':username' => $_SESSION['username']));
+      $stmt = $db->prepare('SELECT * FROM users ORDER BY display_name');
+      $stmt->execute();
       $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       return $query;

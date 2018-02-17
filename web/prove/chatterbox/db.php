@@ -102,7 +102,7 @@
          return 7;
 
       if(!isset($_SESSION['user_id']))
-         return 5;
+         header('Location: login.php');
       
       $db = getDB();
 

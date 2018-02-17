@@ -1,45 +1,10 @@
 <?php
    session_start(); 
-   // $db = NULL;
-
-   //  try 
-   //  {
-   //     $dbUrl = getenv('DATABASE_URL');
-   //     /*if (!isset($dbUrl) || empty($dbUrl))
-   //        echo '<script> alert("Not Set"); </script>';
-   //     else
-   //        echo '<script> alert("Set"); </script>';*/
-   //     $dbopts = parse_url($dbUrl);
-   //     $dbHost = $dbopts["host"];
-   //     $dbPort = $dbopts["port"];
-   //     $dbUser = $dbopts["user"];
-   //     $dbPassword = $dbopts["pass"];
-   //     $dbName = ltrim($dbopts["path"],'/');
-
-   //     // PDO connection
-   //     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-   //     $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-
-   //  }  catch (PDOException $ex) 
-   //  {
-   //     echo "Error! Cannot connect to DB because: $ex";
-
-   //     die();
-   //  }
 
    require "db.php";
-   //session_unset();
-   // if(!isset($_SESSION['username'])){
-   //    $_SESSION['username'] = 'aengland94';
 
    //connect to database
    $db = getDB();
-   //connectToDB();
-   //$stmt = $dp->prepare('SELECT * FROM public.users WHERE username=:username');
-   //$stmt->execute(array(':username' => $_SESSION['username']););
-   //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-   //echo '<script> alert("' . $_SESSION['contact_id'] . '"); </script>';
 
     if (!isset($_SESSION['db']))
        $_SESSION['db'] = $db;
@@ -87,11 +52,10 @@
             <div class="row">
               <h2 class="col-md-4">Contacts:</h2>
             </div>
+            <div class="row">
+              <a href="addContact.php" class="col-md-4">Add A Contact</a>
+            </div>
             <?php 
-              /*$statement = $currentDB->prepare("SELECT username FROM public.users");
-              $statement->execute();
-
-              while($row = $statement->fetch(PDO::FETCH_ASSOC))*/
               /*echo '<script> alert("before foreach"); </script>';*/
               foreach ($_SESSION['db']->query("SELECT * FROM contacts AS c
                                               JOIN users AS u
@@ -110,7 +74,8 @@
               <?php 
                  if ($_SESSION['contact_id'] == 0)
                  {
-                    echo "<h2 class='col-md-6'>Click on a contact to send them a message and view the conversation you have had with them.</h2>";
+                    echo "<p class='col-md-6'>Click on a contact to send them a message and view the conversation you have had with them.</p>";
+                    echo "<p class='col-md-6'>Click on Add A Contact to add a new one</p>";
                  }
                  else
                  {
@@ -137,7 +102,7 @@
                  }
               ?>
             </div>
-            <form class="row" action="" method="POST">
+            <form class="row" action="send.php" method="POST">
                <textarea rows="3" maxlength="250" class="col-md-6" autofocus></textarea>
                <input type="submit" name="submit" value="send" class="col-md-2">
             </form>

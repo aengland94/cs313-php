@@ -98,7 +98,7 @@
 
    function getContact($user_id, $contact_id)
    {
-      if (!isset($_SESSION['contact_id']) || !isset($_SESSION['user_id']))
+      if (!isset($_SESSION['contact_id']) && !isset($_SESSION['user_id']))
          return 7;
       $db = getDB();
 

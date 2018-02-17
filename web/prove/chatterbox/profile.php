@@ -43,11 +43,11 @@
         </script>
    </head>
    <body class="container">
-      <div class="row">
-        <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
-      </div>
       <div class="body row">
          <div class="col-md-4"> 
+            <div class="row">
+              <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
+            </div>
             <div class="row">
               <h2 class="col-md-4">Contacts:</h2>
             </div>

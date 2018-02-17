@@ -23,7 +23,7 @@
       <script type="text/javascript">
          function addContact(newContact){
             $.post("userToContact.php", {contact: newContact}, function(){
-               location.reload(true);
+               location.href = "profile.php";
             });
          }
       </script>
@@ -36,7 +36,8 @@
          <?php 
             foreach (getUsers() as $row)
             {
-               echo '<div class="row"><button class="col-md-4" onclick="addContact(' . $row['id'] . ')">' . $row['display_name'] . '</button></div>';
+               if ($row['username'] != $_SESSION['username'])
+                  echo '<div class="row"><button class="col-md-4" onclick="addContact(' . $row['id'] . ')">' . $row['display_name'] . '</button></div>';
             }
          ?>
       </div>

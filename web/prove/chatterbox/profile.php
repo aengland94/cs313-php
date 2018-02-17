@@ -42,10 +42,9 @@
           }
         </script>
    </head>
-   <body>
-      <div class="body">
-         
-         <div class="container"> 
+   <body class="container">
+      <div class="body row">
+         <div class="col-md-4"> 
             <div class="row">
               <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
             </div>
@@ -69,7 +68,7 @@
             ?> 
             
          </div>
-         <div class="container">
+         <div class="col-md-6">
             <div class="row">
               <?php 
                  if ($_SESSION['contact_id'] == 0)

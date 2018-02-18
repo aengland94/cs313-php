@@ -5,7 +5,7 @@
    require "db.php";
    $db = getDB();
 
-   $isValid = false;
+   $isValid = true;
 
    //check that all field are filled
    if(!isset($_POST['display_name'])   ||

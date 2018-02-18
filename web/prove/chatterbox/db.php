@@ -117,7 +117,7 @@
          return $row['id'];
       }
 
-      return 6;
+      return 0;
    }
 
    function insertMessage($message_text)

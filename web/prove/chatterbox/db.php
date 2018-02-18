@@ -94,6 +94,8 @@
          $_SESSION['username'] = $row['username'];
          $_SESSION['display_name'] = $row['display_name'];
       }
+
+      $_SESSION['contact_id'] = 0;
    }
 
    function getContact($contact_id)
@@ -133,10 +135,11 @@
    {
       $db = getDB();
 
-      $contacts_id = getContact($contact_id);
-
-      $stmt = $db->prepare('INSERT INTO contacts (user_id, contact_id) VALUES (:user_id, :contact_id)');
-      $stmt->execute(array(':user_id' => $_SESSION['user_id'], ':contact_id' => $contact_id));
+      if (getContact($contact_id) == 0)
+      {
+         $stmt = $db->prepare('INSERT INTO contacts (user_id, contact_id) VALUES (:user_id, :contact_id)');
+         $stmt->execute(array(':user_id' => $_SESSION['user_id'], ':contact_id' => $contact_id));
+      }
    }
 
    function getUsers()

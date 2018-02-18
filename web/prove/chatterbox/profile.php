@@ -9,13 +9,7 @@
     if (!isset($_SESSION['db']))
        $_SESSION['db'] = $db;
     if (!isset($_SESSION['username']))
-       $_SESSION['username'] = 'hpotter';
-    if (!isset($_SESSION['display_name']))
-       $_SESSION['display_name'] = 'Harry Potter';
-    if (!isset($_SESSION['user_id']))
-       $_SESSION['user_id'] = 2;
-    if (!isset($_SESSION['contact_id']))
-       $_SESSION['contact_id'] = 0;
+       header("Location: login.php");
 ?>
 <!DOCTYPE html>
 <!-- Profile page for Chatterbox -->
@@ -45,6 +39,15 @@
    <body class="container"> 
       <div class="row">
          <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
+         <div class="col"></div>
+         <div class="col-md-6">
+           <div class="row">
+             <h2 class="col-md-12">Chatterbox</h2>
+           </div>
+           <div class="row">
+             <a href="logout.php" class="col-md-12">log out</a>
+           </div>
+         </div>
       </div>
       <div class="body row">
          <div class="col-md-4">

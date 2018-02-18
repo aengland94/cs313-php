@@ -118,25 +118,25 @@
       return 6;
    }
 
-   function insertMessage($user_id, $contact_id, $message_text)
+   function insertMessage($message_text)
    {
       $db = getDB();
 
-      $contacts_id = getContact($_SESSION['contact_id']);
+      $contact_id = getContact($_SESSION['contact_id']);
       //$contacts_id = 4;
 
       $stmt = $db->prepare('INSERT INTO messages (contact_id, message_text) VALUES (:contact_id, :message_text)');
-      $stmt->execute(array(':contact_id' => $contacts_id, ':message_text' => $message_text));
+      $stmt->execute(array(':contact_id' => $contact_id, ':message_text' => $message_text));
    }
 
-   function insertContact($user_id, $contact_id)
+   function insertContact($contact_id)
    {
       $db = getDB();
 
       $contacts_id = getContact($contacts_id);
 
       $stmt = $db->prepare('INSERT INTO contacts (user_id, contact_id) VALUES (:user_id, :contact_id)');
-      $stmt->execute(array(':user_id' => $user_id, ':contact_id' => $contacts_id));
+      $stmt->execute(array(':user_id' => $_SESSION['user_id'], ':contact_id' => $contacts_id));
    }
 
    function getUsers()

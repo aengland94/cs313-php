@@ -49,11 +49,8 @@
       <div class="body row">
          <div class="col-md-4">
             <div class="row">
-              <h2 class="col-md-4">Contacts:</h2>
-            </div>
-            <div class="row">
-              <a href="addContact.php" class="col-md-4">Add A Contact</a>
-            </div>
+              <h2 class="col-md-12">Contacts:</h2>
+              <a href="addContact.php" class="col-md-12">Add A Contact</a>
             <?php 
               /*echo '<script> alert("before foreach"); </script>';*/
               foreach ($_SESSION['db']->query("SELECT * FROM contacts AS c
@@ -62,11 +59,11 @@
                                               WHERE c.user_id = " . $_SESSION['user_id'] .
                                               "ORDER BY u.display_name;") as $row)
               {
-                 echo '<div class="row"><button class="col-md-4" onclick="setMessages(' . $row['contact_id'] . ')">' . $row['display_name'] . '</button></div>';
+                 echo '<button class="col-md-12" onclick="setMessages(' . $row['contact_id'] . ')">' . $row['display_name'] . '</button>';
               }
            
             ?> 
-            
+            </div>
          </div>
          <div class="col-md-6">
             <div class="row">

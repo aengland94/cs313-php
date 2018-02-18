@@ -133,10 +133,10 @@
    {
       $db = getDB();
 
-      $contacts_id = getContact($contacts_id);
+      $contacts_id = getContact($contact_id);
 
       $stmt = $db->prepare('INSERT INTO contacts (user_id, contact_id) VALUES (:user_id, :contact_id)');
-      $stmt->execute(array(':user_id' => $_SESSION['user_id'], ':contact_id' => $contacts_id));
+      $stmt->execute(array(':user_id' => $_SESSION['user_id'], ':contact_id' => $contact_id));
    }
 
    function getUsers()

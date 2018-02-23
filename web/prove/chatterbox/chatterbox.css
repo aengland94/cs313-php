@@ -4,29 +4,31 @@
    color: red;
 }
 
-h3.you
+h3.you, h3.them
 {
    margin-bottom: 0px;
+}
+
+p.you, p.them
+{
+   padding-top: 10px;
+   padding-bottom: 10px;
+   border-radius: 15px;
+   margin: 0px 30px;
 }
 
 p.you
 {
    background-color: #A2FFF5; 
-   margin: 0px 30px;
-   padding-top: 10px;
-   padding-bottom: 10px;
-}
-
-h3.them
-{
-   margin-bottom: 0px;
 }
 
 p.them
 {
    background-color: #ccc;
    color: #333;
-   margin: 0px 30px;
-   padding-top: 10px;
-   padding-bottom: 10px;
+}
+
+.header, .header *
+{
+   background-color: #888;
 }

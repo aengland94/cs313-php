@@ -37,10 +37,10 @@
         </script>
    </head>
    <body class="container"> 
-      <div class="row">
+      <div class="row header">
          <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
          <div class="col"></div>
-         <div class="col-md-6">
+         <div class="col-md-4">
            <div class="row">
              <h2 class="col-md-12">Chatterbox</h2>
            </div>
@@ -89,8 +89,8 @@
                     {
                         if ($row['user_id'] == $_SESSION['user_id'])
                         {
-                           echo "<h3 class='col-md-6 you'>You</h3>";
-                           echo "<p class='col-md-6 you'>" . $row['message_text'] . "</p>";
+                           echo "<h3 class='col-md-6 you align-self-end'>You</h3>";
+                           echo "<p class='col-md-6 you align-self-end'>" . $row['message_text'] . "</p>";
                         }
                         else
                         {

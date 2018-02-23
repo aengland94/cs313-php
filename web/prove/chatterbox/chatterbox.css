@@ -31,4 +31,12 @@ p.them
 .header, .header *
 {
    background-color: #888;
+   color: #ccc;
 }
+
+.side, .side *
+{
+   background-color: #ccc;
+   color: #888;
+}
+

@@ -45,12 +45,12 @@
              <h2 class="col-md-12">Chatterbox</h2>
            </div>
            <div class="row">
-             <a href="logout.php" class="col-md-12">log out</a>
+             <a href="logout.php" class="col-md-12">logout</a>
            </div>
          </div>
       </div>
       <div class="body row">
-         <div class="col-md-4">
+         <div class="col-md-4 side">
             <div class="row">
               <h2 class="col-md-12">Contacts:</h2>
               <a href="addContact.php" class="col-md-12">Add A Contact</a>
@@ -89,20 +89,20 @@
                     {
                         if ($row['user_id'] == $_SESSION['user_id'])
                         {
-                           echo "<h3 class='col-md-6 you align-self-end'>You</h3>";
-                           echo "<p class='col-md-6 you align-self-end'>" . $row['message_text'] . "</p>";
+                           echo "<h3 class='col-md-7 you'>You</h3>";
+                           echo "<p class='col-md-7 you'>" . $row['message_text'] . "</p>";
                         }
                         else
                         {
-                           echo "<h3 class='col-md-6 them'>" . $row['display_name'] . "</h3>";
-                           echo "<p class='col-md-6 them'>" . $row['message_text'] . "</p>";
+                           echo "<h3 class='col-md-7 them'>" . $row['display_name'] . "</h3>";
+                           echo "<p class='col-md-7 them'>" . $row['message_text'] . "</p>";
                         }
                     }
                  }
               ?>
             </div>
             <form class="row" action="send.php" method="POST">
-               <textarea rows="3" maxlength="250" name="message_text" class="col-md-6" autofocus></textarea>
+               <textarea rows="3" maxlength="250" name="message_text" class="col-md-7" autofocus></textarea>
                <input type="submit" name="submit" value="send" class="col-md-2">
             </form>
          </div>

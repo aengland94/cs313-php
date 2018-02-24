@@ -18,6 +18,7 @@
    	  <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title><?php echo $_SESSION['display_name']; ?></title>
+        <link rel="icon" type="image/png" href="img/logoBlack@0.5x.png" />
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="chatterbox.css"/>
@@ -39,7 +40,7 @@
       <div class="row header">
          <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
          <div class="col"></div>
-         <img src="img/logoWhite.PNG" alt="Chatterbox" class="col-md-2">
+         <img src="img/logoWhite.png" alt="Chatterbox" class="col-md-2">
          <div class="col-md-3">
            <div class="row">
              <h2 class="col-md-12">Chatterbox</h2>
@@ -62,7 +63,7 @@
                                               WHERE c.user_id = " . $_SESSION['user_id'] .
                                               "ORDER BY u.display_name;") as $row)
               {
-                 echo '<button class="col-md-12" onclick="setMessages(' . $row['contact_id'] . ')">' . $row['display_name'] . '</button>';
+                 echo '<button class="col-md-11" onclick="setMessages(' . $row['contact_id'] . ')">' . $row['display_name'] . '</button>';
               }
            
             ?> 

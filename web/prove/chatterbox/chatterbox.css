@@ -12,6 +12,11 @@ body
     background-color: #f2f2f2;
 }
 
+div
+{
+   background-color: inherit;
+}
+
 .error 
 {
    color: red;
@@ -50,6 +55,6 @@ p.them
 .side, .side *
 {
    background-color: #ccc;
-   color: #888;
+   color: #333;
 }
 

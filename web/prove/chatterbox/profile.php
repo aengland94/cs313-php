@@ -39,7 +39,8 @@
       <div class="row header">
          <h1 class="col-md-4"><?php echo $_SESSION['display_name']; ?></h1>
          <div class="col"></div>
-         <div class="col-md-4">
+         <img src="img/logoWhite.PNG" alt="Chatterbox" class="col-md-2">
+         <div class="col-md-3">
            <div class="row">
              <h2 class="col-md-12">Chatterbox</h2>
            </div>
@@ -48,7 +49,7 @@
            </div>
          </div>
       </div>
-      <div class="body row">
+      <div class="row justify-content-between">
          <div class="col-md-4 side">
             <div class="row">
               <h2 class="col-md-12">Contacts:</h2>
@@ -67,7 +68,7 @@
             ?> 
             </div>
          </div>
-         <div class="col-md-6 messages">
+         <div class="col-md-7 messages">
             
               <?php 
                  if ($_SESSION['contact_id'] == 0)

@@ -25,7 +25,7 @@
           
         </script>
    </head>
-   <body>
+   <body class="container">
       <div class="row header">
          <h1 class="col-md-5">Login</h1>
          <div class="col"></div>
@@ -36,22 +36,24 @@
             </div>
          </div>
       </div>
-      <form action="<?php echo htmlspecialchars('validateLogin.php'); ?>" method="POST" class="row side"> 
-         <div class="row justify-content-around">
-            <h3 class="col-md-4">Username:</h3>
-            <input type="text" name="username" class="col-md-4" maxlength="30">
-         </div>
-         <div class="row justify-content-around">
-            <h3 class="col-md-4">Password:</h3>
-            <input type="password" name="password" class="col-md-4" maxlength="30">
-            <?php 
-               if(!$_SESSION['isValid'])
-                 echo '<h3 class="col-md-6 error">ERROR: Username and/or password is incorrect</h3>'; 
-            ?>
-         </div>
-         <div class="row justify-content-around">
-            <a href="newAccount.php" class="col-md-4">Create Account</a>
-            <input type="submit" name="submit" value="Login" class="col-md-4">
+      <form action="<?php echo htmlspecialchars('validateLogin.php'); ?>" method="POST" class="row side">
+         <div class="col-md-12"> 
+           <div class="row justify-content-around">
+              <h3 class="col-md-4">Username:</h3>
+              <input type="text" name="username" class="col-md-4" maxlength="30">
+           </div>
+           <div class="row justify-content-around">
+              <h3 class="col-md-4">Password:</h3>
+              <input type="password" name="password" class="col-md-4" maxlength="30">
+              <?php 
+                 if(!$_SESSION['isValid'])
+                   echo '<h3 class="col-md-6 error">ERROR: Username and/or password is incorrect</h3>'; 
+              ?>
+           </div>
+           <div class="row justify-content-around">
+              <a href="newAccount.php" class="col-md-4">Create Account</a>
+              <input type="submit" name="submit" value="Login" class="col-md-4">
+           </div>
          </div>
       </form>
    </body>

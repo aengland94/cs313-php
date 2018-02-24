@@ -41,6 +41,7 @@
                <a href="profile.php" class="col-md-12">home</a>
             </div>
          </div>
+      </div>
       <div class="row">
          <h3 class="col-md-6">Click on a contact to add them</h3>
       </div>

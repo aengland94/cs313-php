@@ -67,13 +67,14 @@
             ?> 
             </div>
          </div>
-         <div class="col-md-6">
-            <div class="row">
+         <div class="col-md-6 messages">
+            
               <?php 
                  if ($_SESSION['contact_id'] == 0)
                  {
+                    echo '<div class="row">';
                     echo "<p class='col-md-6'>Click on a contact to send them a message and view the conversation you have had with them.</p>";
-                    echo "<p class='col-md-6'>Click on Add A Contact to add a new one</p>";
+                    echo "<p class='col-md-6'>Click on Add A Contact to add a new one</p></div>";
                  }
                  else
                  {
@@ -88,22 +89,25 @@
                     {
                         if ($row['user_id'] == $_SESSION['user_id'])
                         {
+                           echo '<div class="row justify-content-end">';
                            echo "<h3 class='col-md-7 you'>You</h3>";
-                           echo "<p class='col-md-7 you'>" . $row['message_text'] . "</p>";
+                           echo "<p class='col-md-7 you'>" . $row['message_text']; 
+                           echo "</p></div>";
                         }
                         else
                         {
+                           echo '<div class="row justify-content-start">';
                            echo "<h3 class='col-md-7 them'>" . $row['display_name'] . "</h3>";
-                           echo "<p class='col-md-7 them'>" . $row['message_text'] . "</p>";
+                           echo "<p class='col-md-7 them'>" . $row['message_text'];
+                           echo "</p></div>";
                         }
                     }
+                    echo '<form class="row justify-content-between" action="send.php" method="POST">';
+                    echo '<textarea rows="3" maxlength="250" name="message_text" class="col-md-7" autofocus></textarea>';
+                    echo '<input type="submit" name="submit" value="send" class="col-md-2">';
+                    echo "</form>";
                  }
               ?>
-            </div>
-            <form class="row" action="send.php" method="POST">
-               <textarea rows="3" maxlength="250" name="message_text" class="col-md-7" autofocus></textarea>
-               <input type="submit" name="submit" value="send" class="col-md-2">
-            </form>
          </div>
       </div>
    </body>

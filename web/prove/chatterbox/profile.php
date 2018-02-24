@@ -76,7 +76,7 @@
                  {
                     echo '<div class="row">';
                     echo "<p class='col-md-6'>Click on a contact to send them a message and view the conversation you have had with them.</p>";
-                    echo "<p class='col-md-6'>Click on Add A Contact to add a new one</p></div>";
+                    echo "<p class='col-md-6'>Click on Add A Contact to add a new one.</p></div>";
                  }
                  else
                  {

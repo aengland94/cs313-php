@@ -17,9 +17,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>New Account</title>
+        <link rel="icon" type="image/png" href="img/logoBlack@0.5x.png" />
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../../css/basic.css"/>
         <link rel="stylesheet" type="text/css" href="chatterbox.css"/>
         <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -31,14 +31,23 @@
           
         </script>
    </head>
-   <body>
-      <div class="body">
-          <form action="<?php echo htmlspecialchars('validateNewAccount.php'); ?>" method="POST" class="container"> 
-             <div class="row">
+   <body class="container">
+          <div class="row header">
+             <h1 class="col-md-5">Create an Account</h1>
+             <div class="col"></div>
+             <img src="img/logoWhite.png" alt="Chatterbox" class="col-md-2">
+             <div class="col-md-3">
+                <div class="row">
+                   <h2 class="col-md-12">Chatterbox</h2>
+                </div>
+             </div>
+          </div>
+          <form action="<?php echo htmlspecialchars('validateNewAccount.php'); ?>" method="POST" class="row side"> 
+             <div class="row justify-content-around">
                 <h3 class="col-md-4">Display Name:</h3>
                 <input type="text" name="display_name" class="col-md-4" maxlength="30">
              </div>
-             <div class="row">
+             <div class="row justify-content-around">
                 <h3 class="col-md-4">Username:</h3>
                 <input type="text" name="username" class="col-md-4" maxlength="30">
                 <?php 
@@ -46,11 +55,11 @@
                      echo '<h3 class="col-md-6 error">ERROR: Username already exists</h3>'; 
                 ?>
              </div>
-             <div class="row">
+             <div class="row justify-content-around">
                 <h3 class="col-md-4">Password:</h3>
                 <input type="password" name="password1" class="col-md-4" maxlength="30">
              </div>
-             <div class="row">
+             <div class="row justify-content-around">
                 <h3 class="col-md-4">Password (again):</h3>
                 <input type="password" name="password2" class="col-md-4" maxlength="30">
                 <?php 
@@ -58,8 +67,8 @@
                      echo '<h3 class="col-md-6 error">ERROR: Passwords must match</h3>'; 
                 ?>
              </div>
-             <div class="row">
-                <button class="col-md-4"><a href="login.php">Already have an account?</a></button>
+             <div class="row justify-content-around">
+                <a href="login.php" class="col-md-4">Already have an account?</a>
                 <input type="submit" name="submit" value="Login" class="col-md-4">
                 <?php 
                    if(!$_SESSION['isFull'])
@@ -67,6 +76,5 @@
                 ?>
               </div>
           </form>
-      </div>
    </body>
 </html>

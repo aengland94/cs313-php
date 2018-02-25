@@ -45,11 +45,11 @@
           <form action="<?php echo htmlspecialchars('validateNewAccount.php'); ?>" method="POST" class="row side"> 
              <div class="col-md-12">
                <div class="row justify-content-around">
-                  <h3 class="col-md-4">Display Name:</h3>
+                  <h3 class="col-md-5">Display Name:</h3>
                   <input type="text" name="display_name" class="col-md-4" maxlength="30">
                </div>
                <div class="row justify-content-around">
-                  <h3 class="col-md-4">Username:</h3>
+                  <h3 class="col-md-5">Username:</h3>
                   <input type="text" name="username" class="col-md-4" maxlength="30">
                   <?php 
                      if(!$_SESSION['isUsernameFree'])
@@ -57,11 +57,11 @@
                   ?>
                </div>
                <div class="row justify-content-around">
-                  <h3 class="col-md-4">Password:</h3>
+                  <h3 class="col-md-5">Password:</h3>
                   <input type="password" name="password1" class="col-md-4" maxlength="30">
                </div>
                <div class="row justify-content-around">
-                  <h3 class="col-md-4">Password (again):</h3>
+                  <h3 class="col-md-5">Password (again):</h3>
                   <input type="password" name="password2" class="col-md-4" maxlength="30">
                   <?php 
                      if(!$_SESSION['isPassMatch'])
@@ -69,7 +69,7 @@
                   ?>
                </div>
                <div class="row justify-content-around">
-                  <a href="login.php" class="col-md-4">Already have an account?</a>
+                  <a href="login.php" class="col-md-5">Already have an account?</a>
                   <input type="submit" name="submit" value="Login" class="col-md-4">
                   <?php 
                      if(!$_SESSION['isFull'])

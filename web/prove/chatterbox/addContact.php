@@ -29,8 +29,8 @@
       </script>
    </head>
    <body class="container">
-      <h1 class="col-md-5">Add A Contact</h1>
       <div class="row header">
+         <h1 class="col-md-5">Add A Contact</h1>
          <div class="col"></div>
          <img src="img/logoWhite.png" alt="Chatterbox" class="col-md-2">
          <div class="col-md-3">

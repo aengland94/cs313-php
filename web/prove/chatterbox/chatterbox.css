@@ -22,6 +22,7 @@ button
 {
    background-color: #888;
    color: #f2f2f2;
+   margin: 10px;
 }
 
 .error 

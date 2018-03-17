@@ -152,4 +152,12 @@
 
       return $query;
    }
+
+   function insertResults($signature, $color)
+   {
+      $db = getDB();
+
+      $stmt = $db->prepare('INSERT INTO colors (signature, color) VALUES (:signature, :color)');
+      $stmt->execute(array(':signature' => $signature, ':color' => $color));
+   }
 ?>

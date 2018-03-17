@@ -6,7 +6,7 @@
 
    $isValid = false;
 
-   if (isset($_POST['name']))
+   if (isset($_POST['color']))
    {
       $isValid = true;
       $_SESSION['isValid'] = true;
@@ -19,11 +19,11 @@
 
    if ($isValid)
    {
-      $_SESSION['name'] = $_POST['name'];
-      header("Location: complete_study.php");
+      //$_SESSION['name'], $_POST['color'] to db via insertResults($signature, $color)
+      header("Location: thank_you.php");
    }
    else
    {
-      header("Location: agreement.php");
+      header("Location: results.php");
    }
 ?>

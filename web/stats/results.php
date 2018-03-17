@@ -1,14 +1,16 @@
 <?php 
    session_start();
+
+   if(!isset($_SESSION['name'])) header("Location: agreement.php");
 ?>
 
 <!DOCTYPE html>
-<!-- Ready to begin study page for STATS -->
+<!-- Results page for STATS -->
 <html>
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Ready to Begin</title>
+      <title>Results</title>
       <link rel="icon" type="image/png" href="img/logoBlack@0.5x.png" />
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -21,10 +23,14 @@
    </head>
    <body class="container">
       <div class="row header">
-         <h1 class="col-md-12">Your Agreement has been recorded.</h1>
+         <h1 class="col-md-12">Which drink was sweeter?</h1>
       </div>
-      <div class="row">
-         <h3 class="col-md-6">You may now begin the study.</h3>
-      </div>
+      <form action"submitResults.php" method="POST" class="row">
+         <select name="color" class="col-md-4">
+            <option>Red</option>
+            <option>Clear</option>
+         </select>
+         <input type="submit" name="submit" class="col-md-3">
+      </form>
    </body>
 </html>

@@ -31,7 +31,7 @@
          <p class="col-md-5">I consent to and understand the risks associated with this study including the potential health risks from injesting Red Food Coloring. I also consent to let those doing the study to share my answers in the MATH 221A class.</p>
       </div>
       <form action="<?php echo htmlspecialchars('submitAgreement.php'); ?>" method="POST" class="row justify-content-around">
-         <h3 class="col-md-2">Signiture: </h3>
+         <h3 class="col-md-2">Signature: </h3>
          <input type="text" name="name" class="col-md-4" maxlength="30">
          <input type="submit" name="submit" value="I AGREE" class="col-md-2">
       </form>

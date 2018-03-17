@@ -52,7 +52,7 @@
          }
          else
          {
-            echo '<form action"results.php" meathod="POST" class="row">';
+            echo '<form action="results.php" meathod="POST" class="row">';
             echo '<input type="submit" name="submit" value="Next" class="col-md-3">';
             echo '</form>';
          }

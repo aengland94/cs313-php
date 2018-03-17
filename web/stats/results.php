@@ -25,12 +25,12 @@
       <div class="row header">
          <h1 class="col-md-12">Which drink was sweeter?</h1>
       </div>
-      <form action"submitResults.php" method="POST" class="row">
+      <form action="submitResults.php" method="POST" class="row">
          <select name="color" class="col-md-4">
             <option>Red</option>
             <option>Clear</option>
          </select>
-         <input type="submit" name="submit" class="col-md-3">
+         <input type="submit" name="submit" value="Submit" class="col-md-3">
       </form>
    </body>
 </html>

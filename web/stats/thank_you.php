@@ -27,7 +27,7 @@
       <div class="row header">
          <h1 class="col-md-12">Thank You for being part of our study!</h1>
       </div>
-      <form action"agreement.php" method="POST" class="row">
+      <form action="agreement.php" method="POST" class="row">
          <input type="submit" name="submit" value="Next Person" class="col-md-3">
       </form>
    </body>

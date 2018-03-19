@@ -19,12 +19,20 @@
 
    if ($isValid)
    {
-      echo '<script>alert(name: ' . $_SESSION['name'] . '\ncolor: ' . $_POST['color'] . ')</script>';
-      insertResults($_SESSION['name'], $_POST['color'])  //$_SESSION['name'], $_POST['color'] to db via insertResults($signature, $color)
-      header("Location: thank_you.php");
+      //insertResults($_SESSION['name'], $_POST['color'])  //$_SESSION['name'], $_POST['color'] to db via insertResults($signature, $color)
+      //header("Location: thank_you.php");
    }
    else
    {
       header("Location: results.php");
    }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+   <title>submit results</title>
+</head>
+<body>
+   echo '<script>alert(name: ' . $_SESSION['name'] . '\ncolor: ' . $_POST['color'] . ')</script>';
+</body>
+</html>

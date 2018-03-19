@@ -19,7 +19,7 @@
 
    if ($isValid)
    {
-      insertResults($_SESSION['name'], strval($_POST['color']))  //$_SESSION['name'], $_POST['color'] to db via insertResults($signature, $color)
+      insertResults($_SESSION['name'], strval($_POST['color']));  //$_SESSION['name'], $_POST['color'] to db via insertResults($signature, $color)
       header("Location: thank_you.php");
       //echo '<script>alert(name: ' . $_SESSION['name'] . ' ' . gettype($_SESSION['name']) . '\ncolor: ' . $_POST['color'] . ' ' . gettype(strval($_SESSION['color'])) . ');</script>';
    }

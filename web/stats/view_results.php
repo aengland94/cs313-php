@@ -22,10 +22,16 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <!-- Bootstrap Javascript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+      <style type="text/css">
+         table, th, td 
+         {
+            border: 1px solid black;
+         } 
+      </style>
    </head>
    <body class="container">
       <div class="row header">
-         <h1 class="col-md-12">Thank You for being part of our study!</h1>
+         <h1 class="col-md-12">Study Results</h1>
       </div>
       <table class="row">
          <tbody class="col-md-12">

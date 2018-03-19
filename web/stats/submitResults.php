@@ -19,7 +19,7 @@
 
    if ($isValid)
    {
-      //$_SESSION['name'], $_POST['color'] to db via insertResults($signature, $color)
+      insertResults($_SESSION['name'], $_POST['color'])  //$_SESSION['name'], $_POST['color'] to db via insertResults($signature, $color)
       header("Location: thank_you.php");
    }
    else

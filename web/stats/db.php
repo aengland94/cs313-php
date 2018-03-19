@@ -160,4 +160,15 @@
       $stmt = $db->prepare('INSERT INTO colors (signature, color) VALUES (:signature, :color)');
       $stmt->execute(array(':signature' => $signature, ':color' => $color));
    }
+
+   function getResults()
+   {
+      $db = getDB();
+
+      $stmt = $db->prepare('SELECT * FROM colors ORDER BY id');
+      $stmt->execute();
+      $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      return $query;
+   }
 ?>

@@ -24,6 +24,7 @@
       <link rel="icon" type="image/png" href="img/logoBlack@0.5x.png" />
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="style.css"/>
       <!-- JQuery -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <!-- Popper -->
@@ -40,7 +41,7 @@
    </head>
    <body class="container">
       <div class="row header">
-         <h1 class="col-md-12">Taste the <?php echo $color; ?> drink.</h1>
+         <h1 class="col-md-12">Taste the <?php echo $color; ?> drink then hit next.</h1>
       </div>
       
       <?php 

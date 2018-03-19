@@ -21,16 +21,27 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <!-- Bootstrap Javascript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+      <style type="text/css">
+         input { background-color: inherit; }
+      </style>
    </head>
    <body class="container">
       <div class="row header">
          <h1 class="col-md-12">Which drink was sweeter?</h1>
       </div>
       <form action="submitResults.php" method="POST" class="row">
-         <select name="color" class="col-md-4">
-            <option>Red</option>
-            <option>Clear</option>
-         </select>
+         <div class="col-md-4">
+            <div class="row">
+               <input type="radio" name="color" value="red" class="col">
+               <h3 class="col">Red</h3>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="row">
+               <input type="radio" name="color" value="clear" class="col">
+               <h3 class="col">Clear</h3>
+            </div>
+         </div>
          <input type="submit" name="submit" value="Submit" class="col-md-3">
       </form>
    </body>

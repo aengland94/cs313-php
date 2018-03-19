@@ -33,6 +33,6 @@
    <title>submit results</title>
 </head>
 <body>
-   <?php echo '<script>alert(name: ' . $_SESSION['name'] . '\ncolor: ' . $_POST['color'] . ')</script>'; ?>
+   <?php echo '<script>alert(name: ' . $_SESSION['name'] . ' ' . gettype($_SESSION['name']) . '\ncolor: ' . $_POST['color'] . ' ' . gettype($_SESSION['color']) . ');</script>'; ?>
 </body>
 </html>

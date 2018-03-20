@@ -41,14 +41,14 @@
                <th class="col">Color</th>
             </tr>
             <?php 
-         foreach (getResults() as $row)
-            {
-               echo '<tr class="row"><td class="col">' . $row['id'] . '</td>'; 
-               echo '<td class="col">' . $row['signature'] . '</td>';
-               echo '<td class="col">' . $row['color'] . '</td></tr>';
-            }
-         ?>
-         </tbody>>
+               foreach (getResults() as $row)
+               {
+                  echo '<tr class="row"><td class="col">' . $row['id'] . '</td>'; 
+                  echo '<td class="col">' . $row['signature'] . '</td>';
+                  echo '<td class="col">' . $row['color'] . '</td></tr>';
+               }
+            ?>
+         </tbody>
       </table>
    </body>
 </html>

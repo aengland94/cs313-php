@@ -22,7 +22,8 @@
       <!-- Bootstrap Javascript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
       <style type="text/css">
-         input { background-color: inherit; }
+         .clear { background-color: inherit; }
+         .space { margin-bottom: 10px; }
       </style>
    </head>
    <body class="container">
@@ -30,15 +31,15 @@
          <h1 class="col-md-12">Which drink was sweeter?</h1>
       </div>
       <form action="submitResults.php" method="POST" class="row">
-         <div class="col-md-4">
+         <div class="col-md-4 space">
             <div class="row">
-               <input type="radio" name="color" value="red" class="col">
+               <input type="radio" name="color" value="red" class="col clear">
                <h3 class="col">Red</h3>
             </div>
          </div>
-         <div class="col-md-4">
+         <div class="col-md-4 space">
             <div class="row">
-               <input type="radio" name="color" value="clear" class="col">
+               <input type="radio" name="color" value="clear" class="col clear">
                <h3 class="col">Clear</h3>
             </div>
          </div>

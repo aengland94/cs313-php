@@ -1,0 +1,52 @@
+/** custom CSS **/
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+body {
+   display: block;
+   margin: auto;
+}
+
+div#header {
+   background-color: #38AA9F;
+   opacity: .8;
+}
+
+div#footer {
+   background-color: #333;
+   color: #fff;
+}
+
+h2 {
+   font-family: 'Oswald', sans-serif;
+   color: #38AA9F;
+}
+
+a {
+   color: inherit;
+}
+
+a:hover {
+   text-decoration: none;
+   color: #38AA9F;
+}
+
+a#home:hover {
+   color: #fff;
+}
+
+.nav-item {
+   text-align: center;
+   border-left: #333 solid;
+   color: #fff;
+}
+
+.nav-item.last {
+   border-right: #333 solid;
+}
+
+.nav-item:hover {
+   color: #333;
+}

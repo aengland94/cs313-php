@@ -19,18 +19,28 @@ div#footer {
    color: #fff;
 }
 
-h2 {
+h2, #title {
    font-family: 'Oswald', sans-serif;
    color: #38AA9F;
 }
 
+h1#title { 
+   text-transform: uppercase;
+   letter-spacing: .12em;
+   font-size: 3em; 
+}
+
 a {
-   color: inherit;
+   color: #38AA9F;
 }
 
 a:hover {
    text-decoration: none;
-   color: #38AA9F;
+   color: inherit;
+}
+
+a#home {
+   color: inherit;
 }
 
 a#home:hover {
@@ -43,10 +53,17 @@ a#home:hover {
    color: #fff;
 }
 
-.nav-item.last {
+.nav-item:last-of-type {
    border-right: #333 solid;
 }
 
 .nav-item:hover {
    color: #333;
 }
+
+hr {
+   border: 0;
+   height: 1px;
+   background-image: linear-gradient(to right, #ddd, #38AA9F, #ddd);
+}
+

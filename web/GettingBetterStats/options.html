@@ -19,6 +19,33 @@
    <!-- Custom Styles -->
    <link rel="stylesheet" type="text/css" href="custom.css">
 
+   <style type="text/css">
+      #logo-bar {
+         background-color: #38AA9F;
+      }
+      .btn-logo {
+         cursor: pointer;
+      }
+      #jamf-btn { 
+         background-color: #fff; 
+         border: thin solid #333;
+      }
+      #cherwell-btn { background-color: #ddd; }
+      #labstats-btn { background-color: #333; }
+      .btn-logo:hover, #jamf-btn:hover, #cherwell-btn:hover, #labstats-btn:hover {
+         background-color: #ddd;
+         opacity: .8;
+      }
+      #labstats-cont, #cherwell-cont, #jamf-cont { display: none; }
+      #cherwell-cont { background-color: #ddd; }
+      #labstats-cont { background-color: #333; }
+      #labstats-cont p, #labstats-cont ul { color: #fff; }
+      #jamf-cont {
+         border: thin solid #333;
+         border-top-width: 0;
+      }
+   </style>
+
    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -31,48 +58,117 @@
             <a href="index.html" class="col-md-6" id="home"><h1>Getting Better Stats</h1></a>
             <a href="automation.html" class="col-md p-auto nav-item"><h3>Automation</h3></a>
             <a href="options.html" class="col-md nav-item"><h3>Options</h3></a>
-            <a href="benifits.html" class="col-md nav-item last"><h3>Benifits</h3></a>
+            <a href="benifits.html" class="col-md nav-item"><h3>Benifits</h3></a>
          </div>
       </div>
    </div>
    <div class="container">
       <div class="row mt-4">
-         <h1 class="col">Options</h1>
+         <h1 class="col" id="title">Options</h1>
       </div>
-      <div class="row mt-4">
-         <div class="col-md">
-            <h2>Jamf</h2>
-            <p>TODO: Describe Jamf</p>
-            <h4>Pros/Cons:</h4>
-            <ul>
-               <li>TODO: add content</li>
-            </ul>
-         </div>
-         <div class="col-md"></div>
-      </div>
-      <hr/>
-      <div class="row mt-4">
-         <div class="col-md"></div>
-         <div class="col-md">
-            <h2>Cherwell </h2>
-            <p>TODO: Describe Cherwell </p>
-            <h4>Pros/Cons:</h4>
-            <ul>
-               <li>TODO: add content</li>
-            </ul>
+      <div class="row mt-4 mb-4">
+         <div class="col-md-6">
+            <p>There are many computer managing options out there. Here are some of the best options for use in the David O Mckay Library.</p>
+            <p>Click on the logos below to learn more about each option.</p>
          </div>
       </div>
-      <hr/>
-      <div class="row mt-4">
-         <div class="col-md">
-            <h2>LabStats</h2>
-            <p>TODO: Describe LabStats</p>
-            <h4>Pros/Cons:</h4>
-            <ul>
-               <li>TODO: add content</li>
-            </ul>
+      <div class="row mt-4" id="logo-bar">
+         <div class="col p-4 btn-logo" id="jamf-btn">
+            <img src="img/jamf-logo.png" class="img-fluid" id="jamf-logo" alt="Jamf Logo">
          </div>
-         <div class="col-md"></div>
+         <div class="col p-4 btn-logo" id="cherwell-btn">
+            <img src="img/cherwell-logo.png" class="img-fluid" id="cherwell-logo" alt="Cherwell Logo">
+         </div>
+         <div class="col p-4 btn-logo" id="labstats-btn">
+            <img src="img/labstats-logo.png" class="img-fluid" id="labstats-logo" alt="LabStats Logo">
+         </div>
+      </div>
+      <div class="row" id="jamf-cont">
+         <div class="col">
+            <div class="row pt-4">
+               <div class="col-md pr-4">
+                  <h2>Pros</h2>
+                  
+                     <p><strong>Leading Apple Manager</strong> - Jamf has over <a href="https://www.jamf.com/about/">15,000 customers</a>.</p>
+                     <p><strong>Useful Services</strong> - Services include: device management, app management, inventory, etc.</p>
+                  
+               </div>
+               <div class="col-md">
+                  <h2>Cons</h2>
+                  
+                     <p><strong>Apple Only</strong> - Not all library computers are Apple.</p>
+                     <p><strong>No Application Inventory</strong> - It is unclear application usage is tracked.</p>
+                  
+               </div>
+            </div>
+            <div class="row pt-4 pb-4">
+               <div class="col-md-6">
+                  <p>Learn more by visting their <a href="https://www.jamf.com" target="_blank">website</a>.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row" id="cherwell-cont">
+         <div class="col">
+            <div class="row pt-4">
+               <div class="col">
+                  <p>TODO: Describe Cherwell</p>
+               </div>
+            </div>
+            <div class="row pt-4">
+               <div class="col-md">
+                  <h2>Pros</h2>
+                  <ul>
+                     <li>TODO: add content</li>
+                  </ul>
+               </div>
+               <div class="col-md">
+                  <h2>Cons</h2>
+                  <ul>
+                     <li>TODO: add content</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="row pt-4 pb-4">
+               <div class="col-md-6">
+                  <p>Learn more by visting their <a href="https://www.cherwell.com" target="_blank">website</a>.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row" id="labstats-cont">
+         <div class="col">
+            <div class="row pt-4">
+               <div class="col">
+                  <p>TODO: Describe LabStats</p>
+               </div>
+            </div>
+            <div class="row pt-4">
+               <div class="col-md">
+                  <h2>Pros</h2>
+                  <ul>
+                     <li>TODO: add content</li>
+                  </ul>
+               </div>
+               <div class="col-md">
+                  <h2>Cons</h2>
+                  <ul>
+                     <li>TODO: add content</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="row pt-4 pb-4">
+               <div class="col-md-6">
+                  <p>Learn more by visting their <a href="https://www.labstats.com" target="_blank">website</a>.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row pt-4 pb-4">
+         <div class="col-md-6">
+            <h2>Author's Choice</h2>
+            <p>LabStats is the best option for BYU-Idaho.</p>
+         </div>
       </div>
    </div>
    <div class="container-fluid" id="footer">
@@ -82,5 +178,30 @@
          </div>
       </div>
    </div>
+   <script type="text/javascript">
+      $('#jamf-btn').click(function () {
+         $(this).css('background', '#fff');
+         $(this).css('border-bottom-width', 0);
+         $('#cherwell-cont').hide();
+         $('#labstats-cont').hide();
+         $('#jamf-cont').show();
+      });
+
+      $('#cherwell-btn').click(function () {
+         $(this).css('background', '#ddd');
+         $('#jamf-btn').css('border-bottom-width', 'thin');
+         $('#labstats-cont').hide();
+         $('#jamf-cont').hide();
+         $('#cherwell-cont').show();
+      });
+
+      $('#labstats-btn').click(function () {
+         $(this).css('background', '#333');
+         $('#jamf-btn').css('border-bottom-width', 'thin');
+         $('#cherwell-cont').hide();
+         $('#jamf-cont').hide();
+         $('#labstats-cont').show();
+      });
+   </script>
 </body>
 </html>

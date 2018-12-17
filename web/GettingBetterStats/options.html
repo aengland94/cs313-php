@@ -36,7 +36,7 @@
          background-color: #ddd;
          opacity: .8;
       }
-      #labstats-cont, #cherwell-cont, #jamf-cont { display: none; }
+      #cherwell-cont, #jamf-cont { display: none; }
       #cherwell-cont { background-color: #ddd; }
       #labstats-cont { background-color: #333; }
       #labstats-cont p, #labstats-cont ul { color: #fff; }
@@ -58,7 +58,7 @@
             <a href="index.html" class="col-lg-6" id="home"><h1>Getting Better Stats</h1></a>
             <a href="automation.html" class="col-sm nav-item"><h3>Automation</h3></a>
             <a href="options.html" class="col-sm nav-item"><h3>Options</h3></a>
-            <a href="benifits.html" class="col-sm nav-item"><h3>Benifits</h3></a>
+            <a href="benifits.html" class="col-sm nav-item"><h3>Benefits</h3></a>
          </div>
       </div>
    </div>
@@ -68,8 +68,8 @@
       </div>
       <div class="row mt-4 mb-4">
          <div class="col-md-6">
-            <p>There are many computer managing options out there. Here are some of the best options for use in the David O Mckay Library.</p>
-            <p>Click on the logos below to learn more about each option.</p>
+            <p>There are many computer managing options out there. Here are some of the best options for use in the David O McKay Library.</p>
+            <p><strong>Hover over</strong> logos below to learn more about each option.</p>
          </div>
       </div>
       <div class="row mt-4" id="logo-bar">
@@ -125,7 +125,7 @@
                <div class="col-md">
                   <h2>Cons</h2>
                   
-                  <p><strong>No Direct Benifits For Students</strong> - Cherwell has many useful services, but none of the services they offer directly benifit the students who use the library. Many of the services could result in the students benitting, though.</p>
+                  <p><strong>No Direct Benifits For Students</strong> - Cherwell has many useful services, but none of the services they offer directly benefit the students who use the library. Many of the services could result in the students benefiting, though.</p>
                   
                </div>
             </div>
@@ -149,7 +149,7 @@
                <div class="col-md">
                   <h2>Cons</h2>
                   
-                  <p><strong>App Under Development</strong> - The mobile app would be a great tool for students to know what resourses are available. This app cannot truly be a benifit until it is finished developing, though.</p>
+                  <p><strong>App Under Development</strong> - The mobile app would be a great tool for students to know what resourses are available. This app cannot truly be a benefit until it is finished developing, though.</p>
                   
                </div>
             </div>
@@ -176,7 +176,7 @@
       </div>
    </div>
    <script type="text/javascript">
-      $('#jamf-btn').click(function () {
+      $('#jamf-btn').hover(function () {
          $(this).css('background', '#fff');
          $(this).css('border-bottom-width', 0);
          $('#cherwell-cont').hide();
@@ -184,7 +184,7 @@
          $('#jamf-cont').show();
       });
 
-      $('#cherwell-btn').click(function () {
+      $('#cherwell-btn').hover(function () {
          $(this).css('background', '#ddd');
          $('#jamf-btn').css('border-bottom-width', 'thin');
          $('#labstats-cont').hide();
@@ -192,7 +192,7 @@
          $('#cherwell-cont').show();
       });
 
-      $('#labstats-btn').click(function () {
+      $('#labstats-btn').hover(function () {
          $(this).css('background', '#333');
          $('#jamf-btn').css('border-bottom-width', 'thin');
          $('#cherwell-cont').hide();
